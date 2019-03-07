@@ -1,20 +1,22 @@
 
+const Livro = require("../models/livros");
+const Status = require("http-status");
+
 
 exports.listarLivros = (req,res,next)=>{
-    res.status(200).send({
-        livros : [
-        {
-            id: 1,
-            nome: "Livro 1"
-        },
-        {
-            id: 2,
-            nome: "Livro 2"
-        }
-    ]});
+    Livro.findAll().then((livros)=>{
+        res.status(Status.OK).send(livros);
+    }).catch((erro)=>{
+        next(erro);
+    });
 };
 
 exports.criarLivro = (req,res,next)=>{
     console.log(req.body);
-    res.status(201).send(req.body);
+    const livro = req.body;
+    Livro.create(livro).then(()=>{
+        res.status(Status.CREATED).send();
+    }).catch((erro)=>{
+        next(erro);
+    });
 };

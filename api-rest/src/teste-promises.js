@@ -1,3 +1,5 @@
+
+
 const promise1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
         console.log("Promise 1 com sucesso");
@@ -12,14 +14,14 @@ const promise2 = new Promise((resolve,reject)=>{
     },2000);
 });
 
-/*
+
 promise1.then((resultado)=>{
     console.log("Excutado com sucesso");
     console.log(resultado);
 }).catch((error)=>{
     console.log("Exeutado com erro");
 });
-*/
+
 
 Promise.all([promise1,promise2]).then(()=>{
     console.log("Todos com sucesso");

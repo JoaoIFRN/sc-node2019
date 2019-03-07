@@ -1,3 +1,5 @@
+//npm i sequelize mysql2
+
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize("livros","root","",{
     host  : "localhost",
@@ -6,10 +8,12 @@ const sequelize = new Sequelize("livros","root","",{
     operatorsAliases: false
 });
 
+/*
 sequelize.authenticate().then(()=>{
     console.log("Conectado");
 }).catch((erro)=>{
     console.log("Não conectado");
 });
+*/
 
 module.exports = sequelize;
