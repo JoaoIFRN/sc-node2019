@@ -19,7 +19,7 @@ app.use((error,req, res, next) => {
 });
 
 const sequelize = require("./config/database");
-sequelize.sync({force : true}).then(()=>{
+sequelize.sync({force : false}).then(()=>{
     app.listen(3000,()=>{
         console.log("Está funcionando!");
     });
