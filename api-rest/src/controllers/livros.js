@@ -55,11 +55,9 @@ exports.excluirLivro = (req,res,next) => {
 };
 
 exports.atualizarLivro = (req,res,next)=>{
-    let id = parseInt(req.params.id);
-    console.log(id);
-    let livroBody = req.body;
-    console.log(livroBody);
-    if (!livro || !id){
+    let id = parseInt(req.params.id);    
+    let livroBody = req.body;    
+    if (!livroBody || !id){
         res.status(Status.NO_CONTENT).send();
     }else{
         Livro.findById(id).then((livro)=>{
