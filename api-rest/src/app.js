@@ -10,6 +10,7 @@ const app = express();
 app.use(express.json());
 app.use("/",require("./routers/index"));
 app.use("/livros",require("./routers/livros"));
+app.use("/autores",require('./routers/autores'));
 app.use((req, res, next) => {
     res.status(Status.NOT_FOUND).send();
 });
