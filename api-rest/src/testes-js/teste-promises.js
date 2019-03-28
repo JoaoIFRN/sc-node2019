@@ -1,4 +1,4 @@
-
+/*
 
 const promise1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
@@ -30,3 +30,6 @@ Promise.all([promise1,promise2]).then(()=>{
 });
 
 console.log("Passou aqui");
+*/
+
+console.log(process.env.windir)

@@ -8,7 +8,12 @@ const Status = require("http-status");
 
 
 exports.listarLivros = (req,res,next)=>{
-    Livro.findAll().then((livros)=>{
+    Livro.findAll({attributes: ['id', 'nome','descricao'],
+        include:[{
+            model: require("../models/autores"),
+            required: true
+        }]
+    }).then((livros)=>{
         res.status(Status.OK).send(livros);
     }).catch((erro)=>{
         next(erro);
