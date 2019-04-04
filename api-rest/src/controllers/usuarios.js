@@ -12,7 +12,8 @@ exports.autenticar = (req,res,next)=>{
             senha: dados.senha
         }
     }).then((usuario)=>{
-        let token = authService.geraToken({id: usuario[0].id, email: usuario[0].email});
+        let token = authService.geraToken(
+            {id: usuario[0].id, email: usuario[0].email});
         console.log(token);
         res.status(Status.OK).send(token);
     }).catch((erro)=>{

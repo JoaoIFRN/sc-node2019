@@ -19,12 +19,13 @@ exports.autorizar = (req, res, next) => {
             mensagem : "Acesso negado"
         })
     }else{
-        jwt.verify(token,global.SECRET,(erro,decoded) => {
+        jwt.verify(token,global.SECRET,(erro,dados) => {
             if (erro){
                 res.status(Status.UNAUTHORIZED).json({
                     mensagem : "Token inválido"
                 });
             }else{
+                console.log("Usuário: ", dados.email)
                 next();
             }
         });

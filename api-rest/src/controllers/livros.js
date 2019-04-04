@@ -1,11 +1,6 @@
 
-
-
 const Livro = require("../models/livros");
 const Status = require("http-status");
-
-
-
 
 exports.listarLivros = (req,res,next)=>{
     Livro.findAll({attributes: ['id', 'nome','descricao'],

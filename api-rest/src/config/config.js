@@ -1,1 +1,1 @@
-global.SECRET = "jkfih-krbjbj-kbkb-kjjbwew3";
+global.SECRET = "jkfih-krbjbj-kbkb-kjjbwew3-kghdg";

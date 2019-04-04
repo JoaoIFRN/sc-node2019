@@ -1,6 +1,5 @@
 const express = require("express");
 const Status = require("http-status");
-//const bodyParser = require("body-parser");
 
 const app = express();
 

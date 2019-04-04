@@ -6,7 +6,8 @@ const sequelize = new Sequelize("livros","root","",{
     host  : "localhost",
     dialect : "mysql",
     port : 3306,
-    operatorsAliases: false
+    operatorsAliases: false,
+    logging: false
 });
 
 /*
