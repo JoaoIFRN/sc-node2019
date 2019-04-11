@@ -15,11 +15,11 @@ exports.listarLivros = (req,res,next)=>{
     });
 };
 
-exports.criarLivro = (req,res,next)=>{    
+exports.criarLivro = (req,res,next)=>{        
     const livro = req.body;
     const idsAutores = livro.autores;
     Livro.create(livro).then((novoLivro)=>{
-        novoLivro.setAutors(idsAutores).then().catch();
+        novoLivro.setAutors(idsAutores).then().catch();      
         res.status(Status.CREATED).send();
     }).catch((erro)=>{
         next(erro);
